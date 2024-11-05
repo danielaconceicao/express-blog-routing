@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const postsRouter = require('./routers/posts');
+app.use(express.json())
 
 
 const HOST = process.env.HOST;
@@ -11,7 +12,7 @@ app.listen(PORT, (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('My blog API');
+    res.send('My blog API 01');
 });
 
 app.use('/posts', postsRouter);
